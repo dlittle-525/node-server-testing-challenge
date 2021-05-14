@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "Node Server Testing Challenge",
   "scripts": {
-    "server": "cross-env  node_env=development nodemon index.js",
-    "test": "cross-env  node_env=testing jest --watch"
+    "server": "cross-env  NODE_ENV=development nodemon index.js",
+    "test": "cross-env  NODE_ENV=testing jest --watch --runInBand"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "./jest.setup.js"
+    ]
   },
   "repository": {
     "type": "git",

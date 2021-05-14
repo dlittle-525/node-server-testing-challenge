@@ -4,7 +4,7 @@ const smurfsRouter = require("./smurfs/smurf-router")
 const server = express()
 server.use(express.json())
 
-server.use("./smurfs", smurfsRouter)
+server.use("/smurfs", smurfsRouter)
 server.get('/', (req, res) => {
     res.json({
         message: "Welcome to Smurf Village."
